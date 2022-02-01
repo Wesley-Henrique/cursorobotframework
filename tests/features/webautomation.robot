@@ -17,7 +17,6 @@ Test Teardown         Fechar navegador
 ...        genero=Masculino
 ...        idade=26
 
-
 *** Test Cases ***
 Cenario: Criar usuário com sucesso usando BDD
     [Tags]    BDD
@@ -25,6 +24,20 @@ Cenario: Criar usuário com sucesso usando BDD
     E preencher todos os campos 
     Quando clicar em Criar
     Então deve ser apresentado a mensagem "Usuário criado com sucesso"
+
+Cenario: Criar usuario sem informar o nome
+    [Tags]        NOME
+    Dado que o cliente esteja na tela de cadastro
+    E preencher todos os campos exceto o campo nome
+    Quando clicar em Criar
+    Então deve ser apresentada a mensagem     Name translation missing: pt-BR.activerecord.errors.models.user.attributes.name.blank
+
+Cenario: Criar usuario sem informar o email
+    [Tags]        NOME
+    Dado que o cliente esteja na tela de cadastro
+    E preencher todos os campos exceto o campo email
+    Quando clicar em Criar
+    Então deve ser apresentada a mensagem     Email translation missing: pt-BR.activerecord.errors.models.user.attributes.email.invalid
 
 Cenario: Criar usuário através da sessão de lista de usuários
     [Tags]    LISTA

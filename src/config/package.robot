@@ -16,3 +16,4 @@ Resource          ../auto/keywords/kws_web.robot
 ############################
 
 Resource          hooks.robot
+Resource          hooks.yaml
