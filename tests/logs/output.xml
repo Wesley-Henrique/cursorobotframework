@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.10.1 on win32)" generated="20220131 20:35:49.971" rpa="false" schemaversion="2">
+<suite id="s1" name="Webautomation" source="C:\Users\wesle\Desktop\Cursos\Prime_Robot_Basico\tests\features\webautomation.robot">
+<test id="s1-t1" name="Cenario: Criar usuário através da sessão de lista de usuários">
+<kw name="Abrir navegador" library="hooks" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:black</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220131 20:35:50.221" level="INFO">Opening browser 'chrome' to base url 'about:black'.</msg>
+<status status="PASS" starttime="20220131 20:35:50.220" endtime="20220131 20:35:51.406"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>https://automacaocombatista.herokuapp.com/users</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220131 20:35:51.406" level="INFO">Opening url 'https://automacaocombatista.herokuapp.com/users'</msg>
+<status status="PASS" starttime="20220131 20:35:51.406" endtime="20220131 20:35:52.900"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220131 20:35:52.900" endtime="20220131 20:35:53.017"/>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>20</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20220131 20:35:53.017" endtime="20220131 20:35:53.018"/>
+</kw>
+<status status="PASS" starttime="20220131 20:35:50.220" endtime="20220131 20:35:53.018"/>
+</kw>
+<kw name="Dado que eu esteja na tela de lista de usuários" library="kws_web">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Automação com Batista</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20220131 20:35:53.027" level="INFO">Page title is 'Automação com Batista'.</msg>
+<status status="PASS" starttime="20220131 20:35:53.019" endtime="20220131 20:35:53.027"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//*[contains(text(), 'Lista de Usuários!!')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220131 20:35:53.028" endtime="20220131 20:35:53.055"/>
+</kw>
+<status status="PASS" starttime="20220131 20:35:53.019" endtime="20220131 20:35:53.056"/>
+</kw>
+<kw name="E clique na opção NOVO USUÁRIO" library="kws_web">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//a[@class='btn waves-light green'][contains(text(), 'Novo Usuário')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220131 20:35:53.058" level="INFO">Clicking element 'xpath=//a[@class='btn waves-light green'][contains(text(), 'Novo Usuário')]'.</msg>
+<status status="PASS" starttime="20220131 20:35:53.058" endtime="20220131 20:35:53.106"/>
+</kw>
+<status status="PASS" starttime="20220131 20:35:53.057" endtime="20220131 20:35:53.106"/>
+</kw>
+<kw name="Quando finalizar o cadastro preenchendo todos os campos" library="kws_web">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//*[contains(text(), 'Novo Usuário!!')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220131 20:35:53.108" endtime="20220131 20:35:53.332"/>
+</kw>
+<kw name="E preencher todos os campos" library="kws_web">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=user_name</arg>
+<arg>${NOVO_USUARIO.nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220131 20:35:53.333" level="INFO">Typing text 'Wesley' into text field 'id=user_name'.</msg>
+<status status="PASS" starttime="20220131 20:35:53.332" endtime="20220131 20:35:53.399"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=user_lastname</arg>
+<arg>${NOVO_USUARIO.ult_nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220131 20:35:53.400" level="INFO">Typing text 'Henrique' into text field 'id=user_lastname'.</msg>
+<status status="PASS" starttime="20220131 20:35:53.400" endtime="20220131 20:35:53.464"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=user_email</arg>
+<arg>${NOVO_USUARIO.email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220131 20:35:53.465" level="INFO">Typing text 'wesley.teste@robot.com' into text field 'id=user_email'.</msg>
+<status status="PASS" starttime="20220131 20:35:53.464" endtime="20220131 20:35:53.539"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=user_address</arg>
+<arg>${NOVO_USUARIO.endereco}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220131 20:35:53.540" level="INFO">Typing text 'Rua aprendendo automação' into text field 'id=user_address'.</msg>
+<status status="PASS" starttime="20220131 20:35:53.539" endtime="20220131 20:35:53.617"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=user_university</arg>
+<arg>${NOVO_USUARIO.universidade}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220131 20:35:53.618" level="INFO">Typing text 'UNOPAR' into text field 'id=user_university'.</msg>
+<status status="PASS" starttime="20220131 20:35:53.617" endtime="20220131 20:35:53.679"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=user_profile</arg>
+<arg>${NOVO_USUARIO.profissao}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220131 20:35:53.680" level="INFO">Typing text 'Auxiliar de TI' into text field 'id=user_profile'.</msg>
+<status status="PASS" starttime="20220131 20:35:53.679" endtime="20220131 20:35:53.750"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=user_gender</arg>
+<arg>${NOVO_USUARIO.genero}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220131 20:35:53.751" level="INFO">Typing text 'Masculino' into text field 'id=user_gender'.</msg>
+<status status="PASS" starttime="20220131 20:35:53.750" endtime="20220131 20:35:53.817"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=user_age</arg>
+<arg>${NOVO_USUARIO.idade}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220131 20:35:53.818" level="INFO">Typing text '26' into text field 'id=user_age'.</msg>
+<status status="PASS" starttime="20220131 20:35:53.818" endtime="20220131 20:35:53.875"/>
+</kw>
+<status status="PASS" starttime="20220131 20:35:53.332" endtime="20220131 20:35:53.875"/>
+</kw>
+<kw name="Quando clicar em Criar" library="kws_web">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//input[@value='Criar']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220131 20:35:53.876" level="INFO">Clicking element 'xpath=//input[@value='Criar']'.</msg>
+<status status="PASS" starttime="20220131 20:35:53.876" endtime="20220131 20:35:54.554"/>
+</kw>
+<status status="PASS" starttime="20220131 20:35:53.875" endtime="20220131 20:35:54.554"/>
+</kw>
+<status status="PASS" starttime="20220131 20:35:53.107" endtime="20220131 20:35:54.554"/>
+</kw>
+<kw name="Então deve ser apresentado a mensagem &quot;Usuário criado com sucesso&quot;" library="kws_web">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//*[contains(text(), 'Usuário Criado com sucesso')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220131 20:35:54.555" endtime="20220131 20:35:54.573"/>
+</kw>
+<status status="PASS" starttime="20220131 20:35:54.555" endtime="20220131 20:35:54.573"/>
+</kw>
+<kw name="Fechar navegador" library="hooks" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220131 20:35:54.674" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-13.png"&gt;&lt;img src="selenium-screenshot-13.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220131 20:35:54.574" endtime="20220131 20:35:54.674"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220131 20:35:54.674" endtime="20220131 20:35:57.783"/>
+</kw>
+<status status="PASS" starttime="20220131 20:35:54.573" endtime="20220131 20:35:57.783"/>
+</kw>
+<tag>LISTA</tag>
+<status status="PASS" starttime="20220131 20:35:50.219" endtime="20220131 20:35:57.783"/>
+</test>
+<doc>Aqui estarão presentes todos os testes automatizados do módulo de automação WEB.</doc>
+<status status="PASS" starttime="20220131 20:35:49.972" endtime="20220131 20:35:57.785"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">LISTA</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Webautomation">Webautomation</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
