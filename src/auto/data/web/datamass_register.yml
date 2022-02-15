@@ -1,0 +1,14 @@
+DATA:
+  REGISTER:
+    NOME: Wesley
+    ULT_NOME: Henrique
+    EMAIL: wesley.teste@robot.com
+    ENDERECO: Rua aprendendo automação
+    UNIVERSIDADE: UNOPAR
+    PROFISSAO: Auxiliar TI
+    GENERO: Masculino
+    IDADE: 26
+  MESSAGES:
+    MESSAGE_SUCCESS: Usuário Criado com sucesso
+    ERROR_NAME: "Name translation missing: pt-BR.activerecord.errors.models.user.attributes.name.blank"
+    ERROR_EMAIL: "Email translation missing: pt-BR.activerecord.errors.models.user.attributes.email.invalid"
